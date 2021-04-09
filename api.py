@@ -18,5 +18,12 @@ def post_events():
                     mimetype='text/plain',
                     content_type='text/plain')
 
+@app.route('/stats', methods=['GET'])
+def get_stats():
+    data_xml = open('data.xml', 'r+' )
+    return Response(response= request.data.decode('utf-8'),
+                    mimetype='text/plain',
+                    content_type='text/plain')                   
+
 if __name__ == '__main__':
     app.run(debug=True)
