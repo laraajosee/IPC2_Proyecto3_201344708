@@ -1,29 +1,28 @@
 from flask import Flask, Response, request
 from flask_cors import CORS
-from flask_cors.core import parse_resources
 
 app = Flask(__name__)
-#cors = CORS(app, resources {r"/*": {"origin": "*"}})
+cors = CORS(app, resources={r"/*": {"origin": "*"}})
 
-@app.route('/')
-def Index():
-    return 'Hello  World'
 
-@app.route('/events', methods=['POST'])
+@app.route('/events/', methods=['POST'])
 def post_events():
-    data_xml = open('data.xml', 'w+' )
-    data_xml.write(request.data.decode('utf-8'))
-    data_xml.close
-    return Response(response= request.data.decode('utf-8'),
+    data = open('data.xml', 'w+')
+    data.write(request.data.decode('utf-8'))
+    data.close()
+
+    return Response(response=request.data.decode('utf-8'),
                     mimetype='text/plain',
                     content_type='text/plain')
 
-@app.route('/stats', methods=['GET'])
-def get_stats():
-    data_xml = open('data.xml', 'r+' )
-    return Response(response= request.data.decode('utf-8'),
+
+@app.route('/stats/', methods=['GET'])
+def get_events():
+    data = open('data.xml', 'r+')
+    return Response(response=data.read(),
                     mimetype='text/plain',
-                    content_type='text/plain')                   
+                    content_type='text/plain')
+
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, port=5000)

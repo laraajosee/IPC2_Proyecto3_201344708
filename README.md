@@ -1,2 +1,2 @@
-# IPC2_Proyecto3_201344708
-Proyecto #3 2021
+# test-web-api
+Tutorial para conectar 2 aplicaciones usando Django y Flask
