@@ -1,5 +1,8 @@
 from flask import Flask, Response, request
 from flask_cors import CORS
+from Backend.clase import backend
+
+hola = backend()
 
 app = Flask(__name__)
 cors = CORS(app, resources={r"/*": {"origin": "*"}})
@@ -9,11 +12,16 @@ cors = CORS(app, resources={r"/*": {"origin": "*"}})
 def post_events():
     data = open('data.xml', 'w+')
     data.write(request.data.decode('utf-8'))
+    hola.prueva(request.data.decode('utf-8'))
     data.close()
+    
 
     return Response(response=request.data.decode('utf-8'),
                     mimetype='text/plain',
                     content_type='text/plain')
+
+
+
 
 
 @app.route('/stats/', methods=['GET'])

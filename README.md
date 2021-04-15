@@ -1,2 +1,3 @@
-# test-web-api
-Tutorial para conectar 2 aplicaciones usando Django y Flask
+Proyecto #3
+Jose Manuel Lara ELias
+201344708
