@@ -5,8 +5,8 @@ class Lista:
         self.inicio = None
         #self.final = None
 
-    def insertarFinal(self, fecha):
-        nuevo = Nodo(fecha)
+    def insertarFinal(self, fecha, usuario, afectados, error):
+        nuevo = Nodo(fecha, usuario, afectados,error)
         if self.inicio is None:
             self.inicio = nuevo
             return nuevo
