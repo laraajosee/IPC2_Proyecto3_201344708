@@ -1,12 +1,12 @@
-from Listas.Nodo import Nodo
+from Listas.NodoAfectados import NodoAfectado
 
-class Lista:
+class ListaAfectados:
     def __init__(self):
         self.inicio = None
         #self.final = None
 
-    def insertarFinal(self, fecha, usuario, afectados,numeroError, error):
-        nuevo = Nodo(fecha, usuario, afectados,numeroError,error)
+    def insertarFinal(self, CorreoAfectado):
+        nuevo = NodoAfectado(CorreoAfectado)
         if self.inicio is None:
             self.inicio = nuevo
             return nuevo
@@ -31,7 +31,6 @@ class Lista:
         tmp = self.inicio
         
         while tmp is not None:
-            print('Fecha:',tmp.fecha, '\nUsuario que reporta:'+ tmp.usuario + '\nusuarios que reportaron: ' + str(tmp.afectado).replace(',','')
-            +'\nNo. Error:'+ tmp.numeroError +  '\nError:'+ tmp.error)
+            print('Correo: ',tmp.CorreoAfectado)
 
             tmp = tmp.siguiente
