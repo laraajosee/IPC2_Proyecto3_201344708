@@ -40,27 +40,29 @@ class Lista:
     def estadistica(self):
         tmp = self.inicio
         contador = 0
-        
         while tmp is not None:
-            ListaFechas.append(tmp.fecha)
-            #tmp.estado = 1
-            print("Estado: "+ str(tmp.estado))
+            buscador = 0
+            #print("el tamano de la lista es de: "+ str(len(ListaFechas)))
+            if(len(ListaFechas) == 0):
+               ListaFechas.append(tmp.fecha)
+               tmp.estado = 1
+            for k in ListaFechas:
+               # print("comparando"+ tmp.fecha+"con"+ k)
+                if(str(tmp.fecha) == str(k)):
+                    buscador = 1
+
+            #print("cambio buscador a "+ str(buscador))    
+
+            if(buscador == 0):
+                ListaFechas.append(tmp.fecha)
+                tmp.estado = 1
+    
+            tmp = tmp.siguiente
+        print(ListaFechas)  
+
+        tmp = self.inicio
+        while tmp is not None:
+            print('Fecha:'+ tmp.fecha  +' \nestado: '+ str(tmp.estado))
             tmp = tmp.siguiente
 
-        for k in ListaFechas:
-            temporal = k
-            virgen = 0
-            for n in ListaFechas:
-                print("comparando:"+temporal+'con '+ n)
-                if(temporal == n):
-                    print("se encontro una fecha igual")
-                    if(virgen == 0):
-                        print("por primera vez")
-                        virgen=1
-                    else:
-                        print("por segunda vez")
-
-            virgen = 0
-    
-                
-           # print(k)
+      

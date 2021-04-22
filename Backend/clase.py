@@ -116,7 +116,7 @@ class backend:
                 nodo.error = ConcanetarError
                
             contador = contador + 1
-        ListaFecha.MostrarFecha()
+        #ListaFecha.MostrarFecha()
        # with open('salida.xml', 'w') as f:
          #f.write('Hola mundo\n')
 
