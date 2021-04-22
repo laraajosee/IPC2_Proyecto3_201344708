@@ -11,8 +11,9 @@ cors = CORS(app, resources={r"/*": {"origin": "*"}})
 @app.route('/events/', methods=['POST'])
 def post_events():
     data = open('data.xml', 'w+')
-    data.write(request.data.decode('utf-8'))
-    hola.prueva(request.data.decode('utf-8'))
+ 
+    retorno = hola.prueva(request.data.decode('utf-8'))
+    data.write(retorno)
     data.close()
     
 

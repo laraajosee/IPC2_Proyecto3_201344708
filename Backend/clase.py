@@ -73,15 +73,13 @@ class backend:
                     
                     ContadorFecha = ContadorFecha + 1
                # print(ConcatenarFecha)
-                nodo = ListaFecha.insertarFinal(ConcatenarFecha.replace(" ",""),"","","","")  
+                nodo = ListaFecha.insertarFinal(ConcatenarFecha.replace(" ",""),"","","","",0)  
                 
             
                 
             if(n == 'Reportado por:'):
-                reportador = ""
-                #print("REPORTADO POR:"+str(lista[contador+2]).replace('”',""))
-                #ListaFecha.insertarFinal(fecha)
-                #ListaFecha.MostrarFecha()
+           
+
                 nodo.usuario = str(lista[contador+2]).replace('”',"")
             if(n == 'Usuarios afectados:'):
       
@@ -119,6 +117,13 @@ class backend:
                
             contador = contador + 1
         ListaFecha.MostrarFecha()
+       # with open('salida.xml', 'w') as f:
+         #f.write('Hola mundo\n')
+
+        ListaFecha.estadistica()
+        estadistica = ""
+        
+        return "caca"
 
 
 
