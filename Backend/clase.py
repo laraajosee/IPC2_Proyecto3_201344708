@@ -120,10 +120,11 @@ class backend:
        # with open('salida.xml', 'w') as f:
          #f.write('Hola mundo\n')
 
+        estadistica = "<ESTADISTICAS>" +"\n  <ESTADISTICA>"
         ListaFecha.estadistica()
-        estadistica = ""
         
-        return "caca"
+        
+        return estadistica
 
 
 

@@ -59,8 +59,11 @@ class Lista:
     
             tmp = tmp.siguiente
         print(ListaFechas)  
+        ordenados = sorted(ListaFechas)
+        print("ordenado:"+ str(ordenados))
 
         tmp = self.inicio
+      
         while tmp is not None:
             print('Fecha:'+ tmp.fecha  +' \nestado: '+ str(tmp.estado))
             tmp = tmp.siguiente
