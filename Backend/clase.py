@@ -73,7 +73,7 @@ class backend:
                     
                     ContadorFecha = ContadorFecha + 1
                # print(ConcatenarFecha)
-                nodo = ListaFecha.insertarFinal(ConcatenarFecha.replace(" ",""),"","","","",0)  
+                nodo = ListaFecha.insertarFinal(ConcatenarFecha.replace(" ",""),"","","","",0,"")  
                 
             
                 
@@ -116,13 +116,16 @@ class backend:
                 nodo.error = ConcanetarError
                
             contador = contador + 1
-        #ListaFecha.MostrarFecha()
+        
        # with open('salida.xml', 'w') as f:
          #f.write('Hola mundo\n')
 
-        estadistica = "<ESTADISTICAS>" +"\n  <ESTADISTICA>"
-        ListaFecha.estadistica()
+        #ListaFecha.contador()
         
+        estadistica2 = ListaFecha.estadistica()
+        #ListaFecha.contador()
+        estadistica = "<ESTADISTICAS>" + estadistica2+"\n<ESTADISTICA>"
+        ListaFecha.MostrarFecha()
         
         return estadistica
 
