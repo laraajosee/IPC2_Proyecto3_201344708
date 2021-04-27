@@ -39,6 +39,19 @@ class Lista:
             +'\nNo. Error:'+ tmp.numeroError +  '\nError:'+ tmp.error + '\nMensajes:'+ str(tmp.mensajes))
 
             tmp = tmp.siguiente
+    
+    def ReportadoPor(self, fecha):
+        concatenar = "<REPORTADO_POR>"
+        contador= 0  
+        tmp = self.inicio
+        while tmp is not None:
+            if(tmp.fecha == fecha):
+                contador = contador + 1
+
+
+            tmp = tmp.siguiente
+        return contador
+
 
     def estadistica(self):
         tmp = self.inicio
@@ -74,34 +87,16 @@ class Lista:
 
                      tmp2 = tmp2.siguiente
                 tmp.mensajes = contador
-                print("numero de mensajes en fecha: "+ tmp.fecha+" "+str(contador))
+                #print("numero de mensajes en fecha: "+ tmp.fecha+" "+str(contador))
                 tmp = tmp.siguiente
-
         estadistica = ""
         for x in ordenados:
             tmp = self.inicio
             while tmp is not None:
+                reportado = Lista.ReportadoPor(tmp.fecha)
 
                 if(x == tmp.fecha and tmp.estado == 1):
-                    estadistica = estadistica +'\n  <ESTADISTICA>'+'\n    <FECHA>'+ tmp.fecha+'</FECHA>'+'\n  <CANTIDAD_MENSAJES>'+str(tmp.mensajes)+'<CANTIDAD_MENSAJES>'+'\n  </ESTADISTICA>'
+                    estadistica = estadistica+'\n  <ESTADISTICA>'+'\n    <FECHA>'+ tmp.fecha+'</FECHA>'+'\n  <CANTIDAD_MENSAJES>'+str(tmp.mensajes)+'<CANTIDAD_MENSAJES>'+'\n  </ESTADISTICA>'
                 
                 tmp = tmp.siguiente
         return estadistica       
-
-    #def contador(self):
-       # tmp = self.inicio
-        #while tmp is not None:
-           # contador = 0
-            #if(tmp.estado == 1):
-              #  # print("---comparando: "+ tmp.fecha)
-               #  tmp2 = self.inicio
-               #  while tmp2 is not None:
-                 #    if(tmp.fecha == tmp2.fecha):
-                  #      #print("comparando: "+ tmp.fecha + " "+tmp2.fecha)
-                  #      contador = contador + 1
-
-                 #    tmp2 = tmp2.siguiente
-                     
-            #print("numero de mensajes en fecha: "+ tmp.fecha+" "+str(contador))
-        
-           # tmp = tmp.siguiente
