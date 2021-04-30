@@ -1,1 +1,15 @@
-<EVENTOS><EVENTO>Guatemala, 01/01/2021Reportado por: <”Nombre Empleado 1” correo1@ing.usac.edu.gt>Usuarios afectados: afectado11@ing.usac.edu.gt, <afectado12@ing.usac.edu.gt>Error: 20001 - Desbordamiento de búfer de memoria RAMen el servidor de correo electrónico.</EVENTO>
+<EVENTOS>
+<EVENTO>
+Guatemala, 01/01/2021
+Reportado por: <”Nombre Empleado 1” correo1@ing.usac.edu.gt>
+Usuarios afectados: afectado11@ing.usac.edu.gt, <afectado12@ing.usac.edu.gt>
+Error: 20001 - Desbordamiento de búfer de memoria RAM
+en el servidor de correo electrónico.
+</EVENTO>
+<EVENTO>
+Guatemala, 05/01/2021
+Reportado por: <”Nombre Empleado 2” correo2@ing.usac.edu.gt>
+Usuarios afectados: afectado21@ing.usac.edu.gt, <afectado22@ing.usac.edu.gt>, afectado23@ing.usac.edu.gt
+Error: 25684 - Mensaje de el error 25684 
+este es la segunda linea de el error numero 25684.
+</EVENTO>

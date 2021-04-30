@@ -42,16 +42,20 @@ def registrar_usuario():
     gestor.crear_usuario(dato['nombre'],dato['password'],dato['usuario'],dato['apellido'])
     return '{"Estado":"Usuario Creado"}'
 
+@app.route('/stats')
+def get_events():
+    data = open('data.xml', 'r+', encoding='utf-8')
+
+    return Response(response=data.read(),
+                    mimetype='text/plain',
+                    content_type='text/plain')
+
 
 @app.route('/events', methods=['POST'])
 def post_events():
-    data = open('data.xml', 'w+', encoding='utf-8')
-    dato = request.json
-    hola = dato.get('nombre')
-    hola1 = str(hola).replace('\n',"")
-    data.write(hola1)
-
-    data.close()
+    print("entrando a metodo POST por la api")
+    dato = request.json       
+    gestor.generarArchivo(dato['nombre'])
 
     return Response(response=request.data.decode('utf-8'),
                     mimetype='text/plain',

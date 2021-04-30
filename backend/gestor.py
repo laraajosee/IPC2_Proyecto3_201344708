@@ -1,10 +1,14 @@
+
 from usuario import Usuario
 from videojuego import Videojuego
 import json
 
+
+
 class Gestor:
     def __init__(self):
         self.usuarios =[]
+        self.lista = []
         self.games=[]
         self.games.append(Videojuego("The Witcher 3: Wild Hunt","PS4",450,"El brujo, Geralt of Rivia, inicia la búsqueda de Ciri o Cirilla, la hija del emperador de Niflgaard, que a su vez es perseguida por un ejercito de elfos, la Cacería Salvaje","https://store-images.s-microsoft.com/image/apps.28990.69531514236615003.8f0d03d6-6311-4c21-a151-834503c2901a.d629260e-2bc4-4588-950c-f278cbc22a64"))
         self.games.append(Videojuego("Horizon Zero Dawn: Standard Edition","PS4",210,"El mundo se va al carajo por unas máquinas que se vuelven locas y casi exterminan a la humanidad. Gracias al trabajo de unos cientificos la vida empieza de nuevo.","https://s2.gaming-cdn.com/images/products/6202/orig/horizon-zero-dawn-complete-edition-cover.jpg"))
@@ -12,6 +16,7 @@ class Gestor:
         self.games.append(Videojuego("The Last of Us II","PS4",400,"Secuela de The Last of US, luego de unos años, Ellie y Joel se encuentran en el pueblo de Tommy, en una comunidad que ha sobrevivido, pero un evento desatará el caos.","https://image.api.playstation.com/vulcan/img/rnd/202010/2618/Y02ljdBodKFBiziorYgqftLE.png"))
         self.games.append(Videojuego("Overwatch: Legendary Edition","PS4",320," Videojuego de disparos en primera persona multijugador. Explora el mundo, monta un equipo y lucha por objetivos en emocionantes combates 6 contra 6. Elige a tu héroe. ","https://store-images.s-microsoft.com/image/apps.54257.14553281497432575.4e8710df-0a0b-4813-8d05-490c52019361.f7eb126c-0637-4b63-ad90-74a217d9bc28"))
         self.usuarios.append(Usuario('Javier Estuardo','Lima Abrego','admin','admin'))
+      
 
     def obtener_usuarios(self):
         return json.dumps([ob.__dict__ for ob in self.usuarios])
@@ -47,3 +52,70 @@ class Gestor:
                 self.games[self.games.index(x)]=game
                 return True
         return False
+
+    def generarArchivo(self, texto):
+        print(texto)
+        texto1 = str(texto)
+        concatenar = ""
+
+        for k in texto1:
+            concatenar = concatenar + k
+            if(k == '\n'):
+                concatenar = concatenar.replace("\n", "")
+                concatenar = concatenar.replace("<", "")
+                concatenar = concatenar.replace(">", "")
+                concatenar = concatenar.replace("/", "")
+                concatenar = concatenar.replace("\r", "")
+                #print("Guardar " + concatenar)
+                self.lista.append(concatenar)
+                concatenar = ""
+            if(k == ','):
+                concatenar = concatenar.replace("\n", "")
+                concatenar = concatenar.replace("<", "")
+                concatenar = concatenar.replace(">", "")
+                #print("Guardar " + concatenar)
+                self.lista.append(concatenar)
+                concatenar = ""
+            if(k == ':'):
+                concatenar = concatenar.replace("\n", "")
+               # print("Guardar " + concatenar)
+                self.lista.append(concatenar)
+                concatenar = ""
+            if(k == '”'):
+                concatenar = concatenar.replace("\n", "")
+               # print("Guardar " + concatenar)
+                self.lista.append(concatenar)
+                concatenar = ""
+            if(k == '-'):
+                concatenar = concatenar.replace("\n", "")
+                concatenar = concatenar.replace(" ", "")
+                concatenar = concatenar.replace("-", "")
+               # print("Guardar " + concatenar)
+                self.lista.append(concatenar)
+                concatenar = ""
+
+        contador = 0
+        for n in self.lista:  
+            if(n == 'Guatemala,'):
+                fecha = ""
+                fecha = str(self.lista[contador+1]).replace(" ","")
+                
+                ContadorFecha = 1
+                ConcatenarFecha = ""
+           
+                for l in fecha:
+                    ConcatenarFecha = ConcatenarFecha + l
+                    if(ContadorFecha == 2):
+                        ConcatenarFecha = ConcatenarFecha + "/"
+                        
+                    if(ContadorFecha == 4):
+                        ConcatenarFecha = ConcatenarFecha + "/"
+                    
+                    ContadorFecha = ContadorFecha + 1
+                nodo = ListaFecha.insertarFinal(ConcatenarFecha.replace("","","","","","",0,""))  
+        
+        print(self.lista)
+        data = open('data.xml', 'w+',encoding='utf-8')
+        data.write(texto1)
+        data.close()
+    

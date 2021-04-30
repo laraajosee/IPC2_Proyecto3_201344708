@@ -7,7 +7,8 @@ class LoginForm(forms.Form):
 
 class RegisterForm(forms.Form):
     name = forms.CharField(label="name")
-    #lastname = forms.CharField(label="lastname")
-    #password = forms.CharField(widget=forms.PasswordInput(), label="password")
-    #username = forms.CharField(label="username")
-    #area = forms.CharField(widget=forms.TextAreaField())
+    
+
+
+class RetornoForm(forms.Form):
+    regreso = forms.CharField(label="regreso")

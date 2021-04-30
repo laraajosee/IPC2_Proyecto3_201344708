@@ -7,10 +7,18 @@
             {% csrf_token %}
             <div class="mb-3">
                 <label for="name" class="form-label">Entrada:</label>
-                <textarea class="form-control" id="name" name ="name" aria-describedby="userhelp" cols=10 rows=10></textarea> 
-                <textarea class="form-control" id="name2" name ="name2" aria-describedby="userhelp" cols=40 rows=20></textarea>
+                <textarea class="form-control" id="name" name ="name" aria-describedby="userhelp" cols=40 rows=20>{{textoEntrada}}</textarea> 
             </div>          
             <button type="submit" class="btn btn-dark btn-lg">Registrarse</button>
+          </form>
+          <form action="/recibirTexto/" method="GET">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="regreso" class="form-label">Entrada:</label>
+                <textarea class="form-control" id="regreso" name ="regreso" aria-describedby="userhelp" cols=40 rows=20>{{texto}}</textarea> 
+              <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+            </div>
+            <button type="submit" class="btn btn-dark btn-lg">Iniciar Sesi&oacute;n</button>
           </form>
         </div>
     </div>

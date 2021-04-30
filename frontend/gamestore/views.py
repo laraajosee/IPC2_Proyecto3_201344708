@@ -1,5 +1,6 @@
+from os import name
 from django.shortcuts import render
-from .forms import LoginForm, RegisterForm
+from .forms import LoginForm, RegisterForm, RetornoForm
 import requests
 import json
 # Create your views here.
@@ -31,6 +32,7 @@ def signin(request):
     contexto ={}
     if request.method == 'GET':
         form = LoginForm(request.GET)
+        print(form)
         if form.is_valid():
             user = form.cleaned_data['username']
             passw  =form.cleaned_data['password']
@@ -46,17 +48,36 @@ def signin(request):
                 }
     return render(request, 'store.html', contexto)
 
-def signup(request):
-    #myfiles = {'file': open('C:/Users/che/Desktop/Clase11/data.xml' ,'rb')}
+def RecibirTexto(request):
     contexto ={}
-    if request.method == 'POST':
-        form = RegisterForm(request.POST)
-        #print(form)
+    if request.method == 'GET':
+        form = RetornoForm(request.GET)
+        
         if form.is_valid():
-            name = form.cleaned_data['name']
-            pload = {'nombre':name}
-            r = requests.post(endpoint+'/events',json=pload);
-            print(r.status_code)
+            response = requests.get(endpoint+'/stats');
+            
+            contexto= {
+                'texto': response.text 
+            }
+        
         else:
             print('F')
     return render(request, 'signup.html', contexto)
+
+def signup(request):
+    contexto ={}
+    if request.method == 'POST':
+        form = RegisterForm(request.POST)
+        
+        if form.is_valid():
+            name = form.data['name']
+            pload = {'nombre':name}
+            r = requests.post(endpoint+'/events',json=pload);
+            contexto={
+                'textoEntrada': name
+            }
+        else:
+            print('F')
+    return render(request, 'signup.html', contexto)
+
+   
