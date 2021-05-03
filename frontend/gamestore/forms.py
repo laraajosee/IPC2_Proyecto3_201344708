@@ -7,6 +7,7 @@ class LoginForm(forms.Form):
 
 class RegisterForm(forms.Form):
     name = forms.CharField(label="name")
+    # cualquiernombre       ###
     
 
 class RetornoForm(forms.Form):

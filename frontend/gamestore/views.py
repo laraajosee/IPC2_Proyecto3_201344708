@@ -3,6 +3,7 @@ from django.shortcuts import render
 from .forms import LeerForm, LoginForm, RegisterForm, RetornoForm
 import requests
 import json
+from django.core.files.storage import FileSystemStorage
 # Create your views here.
 endpoint = 'http://127.0.0.1:5000/'
 def home(request):
@@ -55,7 +56,6 @@ def RecibirTexto(request):
     contexto ={}
     if request.method == 'GET':
         form = RetornoForm(request.GET)
-        
         if form.is_valid():
             response = requests.get(endpoint+'/stats');
             
@@ -71,7 +71,6 @@ def signup(request):
     contexto ={}
     if request.method == 'POST':
         form = RegisterForm(request.POST)
-        
         if form.is_valid():
             name = form.data['name']
             pload = {'nombre':name}
@@ -110,8 +109,26 @@ def abrirXML(request):
 
    
 def upload(request):
+    contexto ={}
     if request.method == 'POST':
         uploaded_file = request.FILES['document']
         print(uploaded_file.name)
-        print(uploaded_file.text)
-    return render(request, 'upload.html')
+        print(uploaded_file.size)
+        fs = FileSystemStorage()
+        fs.save(uploaded_file.name, uploaded_file)
+        ds = uploaded_file
+        concatenar=""
+       # with open('name.txt', 'wb+') as destination:
+        #    for chunk in ds.chunks():
+         #       concatenar = concatenar + str(chunk)
+          #      destination.write(chunk) 
+    
+        data = open('C:/Users/che/Desktop/IPC2_Proyecto3_201344708/'+uploaded_file.name, 'r+', encoding='utf-8')
+        hola = data.read()
+        
+        contexto= {
+            'textoEntrada': hola
+        }
+  
+        
+    return render(request, 'signup.html', contexto)

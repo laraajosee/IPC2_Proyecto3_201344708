@@ -16,6 +16,7 @@
   }
 </style>
 <div class="div1">
+        {% if entradaTextp %}
         <form action="/signup/" method="POST" style="float: left">
             {% csrf_token %}
             <div class="offset-md-2">
@@ -23,9 +24,18 @@
                 <textarea class="form-control" id="name" name ="name" aria-describedby="userhelp" cols=130 rows=30>{{textoEntrada}}</textarea> 
                 <button type="submit" class="btn btn-dark btn-lg">Registrarse</button>
             </div>          
-            
           </form>
-          
+          {% else %}
+          <form action="/signup/" method="POST" style="float: left">
+            {% csrf_token %}
+            <div class="offset-md-2">
+                <label for="name" class="form-label">Entrada:</label>
+                <textarea class="form-control" id="name" name ="name" aria-describedby="userhelp" cols=130 rows=30>{{textoEntrada}}</textarea> 
+                <button type="submit" class="btn btn-dark btn-lg">Registrarse</button>
+            </div>          
+          </form>
+          {% endif %}
+
           <form action="/recibirTexto/" method="GET" style="float: left">
             {% csrf_token %}
             <div class="offset-md-2">

@@ -47,9 +47,7 @@ def registrar_usuario():
 def get_events():
     data = open('data.xml', 'r+', encoding='utf-8')
 
-    return Response(response=data.read(),
-                    mimetype='text/plain',
-                    content_type='text/plain')
+    return Response(response=data.read())
 
 
 
