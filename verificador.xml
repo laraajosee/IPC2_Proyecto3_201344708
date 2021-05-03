@@ -1,8 +1,8 @@
 
-<EVENTO>
-Guatemala, 05/01/2021
-Reportado por: ”Nombre Empleado 2” correo2@ing.usac.edu.gt
-Usuarios afectados: afectado21@ing.usac.edu.gt, afectado22@ing.usac.edu.gt, afectado23@ing.usac.edu.gt
-Error: 25684 - Mensaje de el error 25684 
-este es la segunda linea de el error numero 25684.
-</EVENTO>
+	<EVENTO>
+		Guatemala, 20/04/2021
+		Reportado por: homero@ing.usac.edu.gt
+		Usuarios afectados: bart@ing.usac.edu.gt, lisa@ing.usac.edu.gt
+		Error: 20002 - Error de destino, momento equivocado,
+		lugar equivocado y medios equivocados
+	</EVENTO>

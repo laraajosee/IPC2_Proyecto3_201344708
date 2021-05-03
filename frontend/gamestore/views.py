@@ -93,11 +93,11 @@ def abrirXML(request):
             sendingJson={
                 'rutaArchivo':ruta
             }
-            envio = request.post(endpoint+'rutaArchivo', json=sendingJson)   
+            envio = requests.post(endpoint+'rutaArchivo', json=sendingJson)   
             prueba = envio.json() 
             global textoEntrada, auxiliarentrada
-            if prueba['data']=='True' or textoEntrada!="":
-                response = request.get(endpoint+'imprimirEntrada')
+            if prueba['data']=='True' or name!="":
+                response = requests.get(endpoint+'imprimirEntrada')
                 entradaEstatica=response.json()
                 auxiliarentrada=entradaEstatica['entrada']
                 textoEntrada={
@@ -105,7 +105,7 @@ def abrirXML(request):
                 }
             return render(request,'signup.html',textoEntrada)
         else:
-            return render(request,'signup.html',textoEntrada)
+            return render(request,'signup.html',name)
 
 
    

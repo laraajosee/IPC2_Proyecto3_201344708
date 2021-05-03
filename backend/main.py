@@ -57,6 +57,7 @@ def get_events():
 def definirRuta():
     global archivo
     peticion=request.get_json()
+    global ruta
     ruta=peticion['rutaArchivo']
     archivo.openandSave(ruta)
     if ruta!="":
@@ -64,7 +65,11 @@ def definirRuta():
     else:
         return jsonify({'data':'False'})
 
-
+@app.route('/imprimirEntrada', methods=["GET"])
+def enviarEntrada():
+    global archivo
+    chi=archivo.getLineas()
+    return jsonify({'entrada':chi})
 
 @app.route('/events', methods=['POST'])
 def post_events():
