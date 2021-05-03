@@ -3,6 +3,7 @@ from flask_cors import CORS
 
 from gestor import Gestor
 from videojuego import Videojuego
+from archivo import archivo
 app = Flask(__name__)
 app.config["DEBUG"] = True
 
@@ -49,6 +50,20 @@ def get_events():
     return Response(response=data.read(),
                     mimetype='text/plain',
                     content_type='text/plain')
+
+
+
+@app.route('/rutaArchivo', methods=["POST"])
+def definirRuta():
+    global archivo
+    peticion=request.get_json()
+    ruta=peticion['rutaArchivo']
+    archivo.openandSave(ruta)
+    if ruta!="":
+        return jsonify({'data':'True'})
+    else:
+        return jsonify({'data':'False'})
+
 
 
 @app.route('/events', methods=['POST'])

@@ -9,6 +9,8 @@ class RegisterForm(forms.Form):
     name = forms.CharField(label="name")
     
 
-
 class RetornoForm(forms.Form):
     regreso = forms.CharField(label="regreso")
+
+class LeerForm(forms.Form):
+    myFile = forms.CharField(label="myFile")

@@ -1,6 +1,6 @@
 from os import name
 from django.shortcuts import render
-from .forms import LoginForm, RegisterForm, RetornoForm
+from .forms import LeerForm, LoginForm, RegisterForm, RetornoForm
 import requests
 import json
 # Create your views here.
@@ -14,7 +14,10 @@ def home(request):
     return render(request, 'store.html', contexto)
 
 def about(request):
-    return None
+    context = {
+        'title':'about'
+    }
+    return render(request, 'about.html', context)
 
 def login(request):
     context = {
@@ -80,4 +83,35 @@ def signup(request):
             print('F')
     return render(request, 'signup.html', contexto)
 
+
+def abrirXML(request):
+    if request.method == 'GET':
+        form = LeerForm(request.GET)
+       
+        if form.is_valid():
+            ruta = form.cleaned_data['myFile']
+            sendingJson={
+                'rutaArchivo':ruta
+            }
+            envio = request.post(endpoint+'rutaArchivo', json=sendingJson)   
+            prueba = envio.json() 
+            global textoEntrada, auxiliarentrada
+            if prueba['data']=='True' or textoEntrada!="":
+                response = request.get(endpoint+'imprimirEntrada')
+                entradaEstatica=response.json()
+                auxiliarentrada=entradaEstatica['entrada']
+                textoEntrada={
+                    'entradaEstatica':entradaEstatica['entrada']
+                }
+            return render(request,'signup.html',textoEntrada)
+        else:
+            return render(request,'signup.html',textoEntrada)
+
+
    
+def upload(request):
+    if request.method == 'POST':
+        uploaded_file = request.FILES['document']
+        print(uploaded_file.name)
+        print(uploaded_file.text)
+    return render(request, 'upload.html')

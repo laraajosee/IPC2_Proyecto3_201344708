@@ -2,11 +2,14 @@
 from usuario import Usuario
 from videojuego import Videojuego
 import json
+import xml.etree.ElementTree as ET
+from Lista import Lista
 
 
 
 class Gestor:
     def __init__(self):
+        self.ListaFecha = Lista()
         self.usuarios =[]
         self.lista = []
         self.games=[]
@@ -17,6 +20,8 @@ class Gestor:
         self.games.append(Videojuego("Overwatch: Legendary Edition","PS4",320," Videojuego de disparos en primera persona multijugador. Explora el mundo, monta un equipo y lucha por objetivos en emocionantes combates 6 contra 6. Elige a tu héroe. ","https://store-images.s-microsoft.com/image/apps.54257.14553281497432575.4e8710df-0a0b-4813-8d05-490c52019361.f7eb126c-0637-4b63-ad90-74a217d9bc28"))
         self.usuarios.append(Usuario('Javier Estuardo','Lima Abrego','admin','admin'))
       
+    
+
 
     def obtener_usuarios(self):
         return json.dumps([ob.__dict__ for ob in self.usuarios])
@@ -52,70 +57,58 @@ class Gestor:
                 self.games[self.games.index(x)]=game
                 return True
         return False
+    
+    def verificarXml():
+        try:
+             tree = ET.parse('verificador.xml')
+             root = tree.getroot() 
+             return True 
+        except ET.ParseError:
+                 return False
 
     def generarArchivo(self, texto):
         print(texto)
-        texto1 = str(texto)
-        concatenar = ""
-
-        for k in texto1:
-            concatenar = concatenar + k
-            if(k == '\n'):
-                concatenar = concatenar.replace("\n", "")
-                concatenar = concatenar.replace("<", "")
-                concatenar = concatenar.replace(">", "")
-                concatenar = concatenar.replace("/", "")
-                concatenar = concatenar.replace("\r", "")
-                #print("Guardar " + concatenar)
-                self.lista.append(concatenar)
-                concatenar = ""
-            if(k == ','):
-                concatenar = concatenar.replace("\n", "")
-                concatenar = concatenar.replace("<", "")
-                concatenar = concatenar.replace(">", "")
-                #print("Guardar " + concatenar)
-                self.lista.append(concatenar)
-                concatenar = ""
-            if(k == ':'):
-                concatenar = concatenar.replace("\n", "")
-               # print("Guardar " + concatenar)
-                self.lista.append(concatenar)
-                concatenar = ""
-            if(k == '”'):
-                concatenar = concatenar.replace("\n", "")
-               # print("Guardar " + concatenar)
-                self.lista.append(concatenar)
-                concatenar = ""
-            if(k == '-'):
-                concatenar = concatenar.replace("\n", "")
-                concatenar = concatenar.replace(" ", "")
-                concatenar = concatenar.replace("-", "")
-               # print("Guardar " + concatenar)
-                self.lista.append(concatenar)
-                concatenar = ""
-
-        contador = 0
-        for n in self.lista:  
-            if(n == 'Guatemala,'):
-                fecha = ""
-                fecha = str(self.lista[contador+1]).replace(" ","")
-                
-                ContadorFecha = 1
-                ConcatenarFecha = ""
-           
-                for l in fecha:
-                    ConcatenarFecha = ConcatenarFecha + l
-                    if(ContadorFecha == 2):
-                        ConcatenarFecha = ConcatenarFecha + "/"
-                        
-                    if(ContadorFecha == 4):
-                        ConcatenarFecha = ConcatenarFecha + "/"
-                    
-                    ContadorFecha = ContadorFecha + 1
-                nodo = ListaFecha.insertarFinal(ConcatenarFecha.replace("","","","","","",0,""))  
         
-        print(self.lista)
-        data = open('data.xml', 'w+',encoding='utf-8')
-        data.write(texto1)
-        data.close()
+        linea = 0
+        concatenar = ""
+        concatenarFinal= ""
+
+        for n in texto:
+            concatenar= concatenar + n
+            if concatenar == '<EVENTOS>':
+                concatenar = ""
+            if(n == '\n'):
+                linea = linea + 1
+                if(linea > 3):
+                    concatenar1 = str(concatenar).replace("<","")
+                    concatenar2 = str(concatenar1).replace(">","")
+                    #print("concatenar: "+concatenar2 )
+                    concatenarFinal = concatenarFinal + concatenar2
+                    concatenar = ""
+                if(linea < 3):
+                     #print("concatenar: "+ concatenar)
+                     concatenarFinal = concatenarFinal + concatenar
+                     concatenar = ""
+            if(n == '>' and linea > 5): 
+                #print("concatenar: "+ concatenar)   
+                concatenarFinal = concatenarFinal + concatenar 
+                concatenar = ""
     
+                print(concatenarFinal) 
+                data = open('verificador.xml', 'w+',encoding='utf-8')
+                data.write(concatenarFinal)
+                data.close()   
+                try:
+                    tree = ET.parse('verificador.xml')
+                    root = tree.getroot() 
+                    verificador = True
+                except ET.ParseError:
+                    verificador = False
+
+                print(str(verificador))
+                concatenar= ""
+                concatenarFinal=""
+                linea = 0
+                
+        
+

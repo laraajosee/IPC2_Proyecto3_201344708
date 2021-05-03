@@ -9,4 +9,6 @@ urlpatterns = [
     path('registro/', views.registro, name='gamestore-registro'),
     path('signup/',views.signup, name='signup'),
     path('recibirTexto/',views.RecibirTexto, name='recibirTexto'),
+    path('abrirXML/',views.abrirXML, name='abrirXML'),
+    path('upload/', views.upload, name='upload')
 ]
