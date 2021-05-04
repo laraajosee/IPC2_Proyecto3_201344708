@@ -64,6 +64,8 @@ class Lista:
             concatenar=concatenar+"\n\t<ESTADISTICA>"+"\n\t    <FECHA> "+tmp.fecha+" </FECHA>"+"\n\t    <CANTIDAD_MENSAJES> "+str(tmp.mensajes)+" </CANTIDAD_MENSAJES>"
             usuario = tmp.usuario.devolverString()
             concatenar=concatenar+usuario
+            afectado = tmp.afectado.devolverString()
+            concatenar =concatenar+afectado
 
 
             tmp = tmp.siguiente

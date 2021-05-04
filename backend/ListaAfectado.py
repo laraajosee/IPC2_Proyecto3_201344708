@@ -35,3 +35,14 @@ class ListaAfectado:
             print('Correo:'+ tmp.correo)
 
             tmp = tmp.siguiente
+
+    def devolverString(self):
+        tmp = self.inicio
+        concatenar= "\n\t<AFECTADOS>"
+        while tmp is not None:
+            concatenar=concatenar+"\n\t    <AFECTADOS> "+tmp.correo+"</AFECTADOS>"
+
+            tmp = tmp.siguiente
+
+        concatenar=concatenar+"\n\t</AFECTADOS>"
+        return concatenar
