@@ -42,7 +42,13 @@ class Lista:
         tmp = self.inicio
         
         while tmp is not None:
-            print('Fecha:',tmp.fecha)
+            print("***********************************************************************************")
+            print('Fecha:',tmp.fecha + "\nCantidad De Mensajes: "+str(tmp.mensajes)+ '\nUsuario que reporta:')
+            tmp.usuario.MostrarUsuario()
+            print("usuarios Afectados:")
+            tmp.afectado.MostrarAfectado()
+
+
             tmp = tmp.siguiente
     
     def ReportadoPor(self, fecha):
