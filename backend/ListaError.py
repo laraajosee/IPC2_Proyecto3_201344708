@@ -1,12 +1,12 @@
-from NodoAfectado import NodoAfectado
+from NodoError import NodoError
 
-class ListaAfectado:
+class ListaError:
     def __init__(self):
         self.inicio = None
         #self.final = None
 
-    def insertarFinal(self, correo):
-        nuevo = NodoAfectado(correo)
+    def insertarFinal(self, error, cantidadMensajes):
+        nuevo = NodoError(error, cantidadMensajes)
         if self.inicio is None:
             self.inicio = nuevo
             return nuevo
@@ -19,19 +19,18 @@ class ListaAfectado:
             return nuevo
         return None
 
-    def getNodoAfectados(self, correo):
+    def getNodoError(self, usuario):
         tmp = self.inicio
         while tmp is not None:
-            #print("comparando"+ tmp.correo +'con '+ correo)
-            if tmp.correo == correo:
+            if tmp.error == usuario:
                 return tmp
             tmp = tmp.siguiente
         return None
 
-    def MostrarAfectado(self):
+    def MostrarError(self):
         tmp = self.inicio
         
         while tmp is not None:
-            print('Correo:'+ tmp.correo)
+            print('Error:',tmp.error+ ' Cantidad de mensajes: '+ str(tmp.cantidadMensajes))
 
             tmp = tmp.siguiente

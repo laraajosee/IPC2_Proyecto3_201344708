@@ -183,7 +183,7 @@ class Gestor:
                                 nodo = self.ListaFecha.getNodo(ConcatenarFecha)
                                 nodo.mensajes = nodo.mensajes + 1
                              if(verificador == False):
-                                 nodo = self.ListaFecha.insertarFinal(ConcatenarFecha.replace(" ",""),"","","","","",0) 
+                                 nodo = self.ListaFecha.insertarFinal(ConcatenarFecha.replace(" ",""),"","","","",0) 
                                  nodo.mensajes = nodo.mensajes + 1
                         if(n == 'Reportado por:'):
                              reportado = nodo.usuario.getNodoUsuario((str(lista[contador+3]).replace(' ',"")))
@@ -198,7 +198,7 @@ class Gestor:
                 #nodo.afectado.insertarFinal(hola1.replace(' ',""))
                             verificador = nodo.afectado.getNodoAfectados(hola1.replace(' ',""))
                             if(verificador==None):
-                                 print("es None")
+                                 #print("es None")
                     #hola = (str(lista[ContadorAfectados]).replace(' ',""))
                                  hola = (str(lista[contador+1]).replace(',',""))
                                  nodo.afectado.insertarFinal(hola.replace(' ',""))
@@ -211,28 +211,36 @@ class Gestor:
                                     hola2 = str(lista[ContadorAfectados]).replace(',',"")
                                     verificador = nodo.afectado.getNodoAfectados(hola2.replace(' ',""))
                                     print("el verificador es:"+str(verificador))
-                                    print(hola2)
+                                    #print(hola2)
                                      #######################
                                     if(verificador==None):
-                                     print("es None")
+                                     #print("es None")
                             #hola = (str(lista[ContadorAfectados]).replace(' ',""))
                                      hola = (str(lista[ContadorAfectados]).replace(',',""))
                                      nodo.afectado.insertarFinal(hola.replace(' ',""))
                                     elif(verificador!=None):
                                      print("No es none")
-                        #######################
-                       # nodo.afectado.insertarFinal(str(lista[ContadorAfectados].replace(',',"")))
+                            #######################
+                            # nodo.afectado.insertarFinal(str(lista[ContadorAfectados].replace(',',"")))
                                     ContadorAfectados = ContadorAfectados + 1
                                 if(str(lista[ContadorAfectados]) == 'Error:'):
                                     break
-                       ###################################################################
+                        ###################################################################
+                        if(n == 'Error:'):
+                            print("el codigo de error es: "+str(lista[contador+1]))
+                            verificadorError = nodo.error.getNodoError(str(lista[contador+1]))
+                            if(verificadorError==None):
+                                 #print("es None")
+                    #hola = (str(lista[ContadorAfectados]).replace(' ',""))
+                                 nodo.error.insertarFinal(str(lista[contador+1]),1)
+                            elif(verificadorError!=None):
+                                 print("No es none")
+                                 verificadorError.cantidadMensajes = verificadorError.cantidadMensajes + 1
 
 
                         contador = contador + 1
-                        #nodo.cantidadMensajes = nodo.cantidadMensajes + 1 
-                     #print(ConcatenarFecha)
-                     #print('hola'+str(lista))
-                        
-                
+                                 
         self.ListaFecha.MostrarFecha()
+        Estadistica = self.ListaFecha.estadistica()
+        print(Estadistica)
 

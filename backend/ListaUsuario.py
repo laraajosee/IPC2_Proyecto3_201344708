@@ -19,6 +19,18 @@ class ListaUsuario:
             return nuevo
         return None
 
+    def devolverString(self):
+        tmp = self.inicio
+        #concatenar=""
+        concatenar= "\n\t<REPORTADO_POR>"
+        while tmp is not None:
+            #print('Correo:',tmp.usuario+ ' Cantidad de mensajes: '+ str(tmp.cantidadMensajes))
+            concatenar=concatenar+"\n\t    <EMAIL> "+tmp.usuario+" </EMAIL>"+"\n\t    <CANTIDAD_MENSAJES> "+str(tmp.cantidadMensajes)+" <CANTIDAD_MENSAJES>"
+
+            tmp = tmp.siguiente
+        concatenar = concatenar+ "\n\t</REPORTADO_POR>"
+        return concatenar
+
     def getNodoUsuario(self, usuario):
         tmp = self.inicio
         while tmp is not None:
