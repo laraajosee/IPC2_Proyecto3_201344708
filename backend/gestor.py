@@ -78,6 +78,8 @@ class Gestor:
             concatenar= concatenar + n
             if concatenar == '<EVENTOS>':
                 concatenar = ""
+            if concatenar == '<?xml version="1.0" encoding="UTF-8"?>':
+                concatenar = ""
             if(n == '\n'):
                 linea = linea + 1
                 if(linea > 3):
@@ -176,8 +178,15 @@ class Gestor:
                                 ContadorFecha = ContadorFecha + 1
                         contador = contador + 1
                      print(ConcatenarFecha)
-                     print('hola'+str(lista) ) 
-             
+                     print('hola'+str(lista))
+                     verificador = self.ListaFecha.Verificar(ConcatenarFecha)
+                     if(verificador == True):
+                        nodo = self.ListaFecha.getNodo(ConcatenarFecha)
+                        #nodo.cantidadMensajes = nodo.cantidadMensajes + 1
+                     if(verificador == False):
+                        nodo = self.ListaFecha.insertarFinal(ConcatenarFecha.replace(" ",""),"","","","","","") 
+                        #nodo.cantidadMensajes = nodo.cantidadMensajes + 1 
+
                 
-        
+        self.ListaFecha.MostrarFecha()
 

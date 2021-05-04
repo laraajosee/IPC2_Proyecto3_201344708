@@ -21,13 +21,6 @@ def home():
 def getGames():
     return gestor.obtener_games() 
 
-#Login
-#@app.route('/login/<user>/<password>')
-#def login(user=None,password=None):
- #   res = gestor.obtener_usuario(user,password)
-  #  if res ==None:
-   #     return '{"data":false}'
-    #return '{"data":true}'
 
 @app.route('/login/<user>/<password>')
 def login(user=None,password=None):
@@ -48,7 +41,6 @@ def get_events():
     data = open('data.xml', 'r+', encoding='utf-8')
 
     return Response(response=data.read())
-
 
 
 @app.route('/rutaArchivo', methods=["POST"])

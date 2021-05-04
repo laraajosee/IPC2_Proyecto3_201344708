@@ -30,14 +30,19 @@ class Lista:
                 return tmp
             tmp = tmp.siguiente
         return None
+    
+    def getNodo(self, fecha):
+        tmp = self.inicio
+        while tmp is not None:
+            if tmp.fecha == fecha:
+                return tmp
+            tmp = tmp.siguiente
 
     def MostrarFecha(self):
         tmp = self.inicio
         
         while tmp is not None:
-            print('Fecha:',tmp.fecha, '\nUsuario que reporta:'+ tmp.usuario + '\nusuarios que reportaron: ' + str(tmp.afectado).replace(',','')
-            +'\nNo. Error:'+ tmp.numeroError +  '\nError:'+ tmp.error + '\nMensajes:'+ str(tmp.mensajes))
-
+            print('Fecha:',tmp.fecha)
             tmp = tmp.siguiente
     
     def ReportadoPor(self, fecha):
@@ -100,3 +105,16 @@ class Lista:
                 
                 tmp = tmp.siguiente
         return estadistica   
+    
+    def Verificar(self, fecha):
+         tmp = self.inicio
+         verificar = False
+        
+         while tmp is not None:
+           if(tmp.fecha == fecha):
+               verificar = True          
+       
+
+           tmp = tmp.siguiente
+
+         return verificar

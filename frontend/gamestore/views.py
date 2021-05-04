@@ -112,12 +112,12 @@ def upload(request):
     contexto ={}
     if request.method == 'POST':
         uploaded_file = request.FILES['document']
-        print(uploaded_file.name)
-        print(uploaded_file.size)
+        #print(uploaded_file.name)
+        #print(uploaded_file.size)
         fs = FileSystemStorage()
         fs.save(uploaded_file.name, uploaded_file)
-        ds = uploaded_file
-        concatenar=""
+        #ds = uploaded_file
+        #concatenar=""
        # with open('name.txt', 'wb+') as destination:
         #    for chunk in ds.chunks():
          #       concatenar = concatenar + str(chunk)
@@ -125,10 +125,8 @@ def upload(request):
     
         data = open('C:/Users/che/Desktop/IPC2_Proyecto3_201344708/'+uploaded_file.name, 'r+', encoding='utf-8')
         hola = data.read()
-        
         contexto= {
             'textoEntrada': hola
         }
-  
-        
+   
     return render(request, 'signup.html', contexto)
