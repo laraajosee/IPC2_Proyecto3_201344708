@@ -155,10 +155,11 @@ class Gestor:
                      lista.append(concatenar1)
                      concatenar1 = concatenar1.replace("\t", "")
                      concatenar1 = ""
-               
                 concatenarFinal=""
+                
                 if(verificador == True):
                      contador = 0
+                     print(lista)
                      for n in lista:  
                         if(n == 'Guatemala,'):
                              fecha = ""
@@ -243,4 +244,7 @@ class Gestor:
         self.ListaFecha.MostrarFecha()
         Estadistica = self.ListaFecha.estadistica()
         print(Estadistica)
+        data = open('data.xml', 'w+')
+        data.write(Estadistica)
+        data.close()
 

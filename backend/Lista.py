@@ -66,6 +66,8 @@ class Lista:
             concatenar=concatenar+usuario
             afectado = tmp.afectado.devolverString()
             concatenar =concatenar+afectado
+            error = tmp.error.devolverString()
+            concatenar=concatenar+error
 
 
             tmp = tmp.siguiente

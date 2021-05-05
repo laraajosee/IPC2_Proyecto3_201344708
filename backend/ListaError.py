@@ -34,3 +34,14 @@ class ListaError:
             print('Error:',tmp.error+ ' Cantidad de mensajes: '+ str(tmp.cantidadMensajes))
 
             tmp = tmp.siguiente
+
+    def devolverString(self):
+        tmp = self.inicio
+        concatenar ="\n\t<ERRORES>"
+        while tmp is not None:
+            #print('Error:',tmp.error+ ' Cantidad de mensajes: '+ str(tmp.cantidadMensajes))
+            concatenar=concatenar+"\n\t    <ERROR> "+tmp.error+"</ERROR>"+"\n\t    <CANTIDAD_MENSAJES> "+str(tmp.cantidadMensajes)+" <CANTIDAD_MENSAJES>"+"\n\t    </ERRORES> "
+            tmp = tmp.siguiente
+        
+        concatenar=concatenar+"\n\t</ERRORES>"
+        return concatenar
