@@ -40,7 +40,7 @@ class ListaError:
         concatenar ="\n\t<ERRORES>"
         while tmp is not None:
             #print('Error:',tmp.error+ ' Cantidad de mensajes: '+ str(tmp.cantidadMensajes))
-            concatenar=concatenar+"\n\t    <ERROR> "+tmp.error+"</ERROR>"+"\n\t    <CANTIDAD_MENSAJES> "+str(tmp.cantidadMensajes)+" <CANTIDAD_MENSAJES>"+"\n\t    </ERRORES> "
+            concatenar=concatenar+"\n\t    <ERROR> "+tmp.error+"</ERROR>"+"\n\t    <CANTIDAD_MENSAJES> "+str(tmp.cantidadMensajes)+" <CANTIDAD_MENSAJES>"
             tmp = tmp.siguiente
         
         concatenar=concatenar+"\n\t</ERRORES>"

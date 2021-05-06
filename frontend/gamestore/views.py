@@ -78,6 +78,7 @@ def signup(request):
             contexto={
                 'textoEntrada': name
             }
+            RecibirTexto()
         else:
             print('F')
     return render(request, 'signup.html', contexto)

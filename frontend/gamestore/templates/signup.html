@@ -12,11 +12,20 @@
   .div1 {
     width: 2500;
     height: 3000px;
+    background:"fondo.png"
     
   }
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: yellow;
+    background-size: cover;
+}
 </style>
+
 <div class="div1">
-        {% if entradaTextp %}
+  <body background="fondo.png"> </body>
+        {% if entradaTexto %}
         <form action="/signup/" method="POST" style="float: left">
             {% csrf_token %}
             <div class="offset-md-2">
@@ -31,7 +40,7 @@
             <div class="offset-md-2">
                 <label for="name" class="form-label">Entrada:</label>
                 <textarea class="form-control" id="name" name ="name" aria-describedby="userhelp" cols=130 rows=30>{{textoEntrada}}</textarea> 
-                <button type="submit" class="btn btn-dark btn-lg">Registrarse</button>
+                <button type="submit" class="btn btn-success btn-lg" >Enviar</button>
             </div>          
           </form>
           {% endif %}
@@ -41,7 +50,7 @@
             <div class="offset-md-2">
                 <label for="regreso" class="form-label">Salida:</label>
                 <textarea class="form-control" id="regreso" name ="regreso" aria-describedby="userhelp" cols=130 rows=30>{{texto}}</textarea> 
-              <button type="submit" class="btn btn-dark btn-lg">Iniciar Sesi&oacute;n</button>
+              <button type="submit" class="btn btn-danger btn-lg">Iniciar Sesi&oacute;n</button>
             </div>
             
           </form>

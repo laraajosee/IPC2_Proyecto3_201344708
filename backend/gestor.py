@@ -186,11 +186,11 @@ class Gestor:
                              if(verificador == False):
                                  nodo = self.ListaFecha.insertarFinal(ConcatenarFecha.replace(" ",""),"","","","",0) 
                                  nodo.mensajes = nodo.mensajes + 1
-                        if(n == 'Reportado por:'):
-                             reportado = nodo.usuario.getNodoUsuario((str(lista[contador+3]).replace(' ',"")))
+                        if(n == 'Usuarios afectados:'):
+                             reportado = nodo.usuario.getNodoUsuario((str(lista[contador-1]).replace(' ',"")))
                              if(reportado==None):
                     #print("es None")
-                                nodo.usuario.insertarFinal((str(lista[contador+3]).replace(' ',"")),1)
+                                nodo.usuario.insertarFinal((str(lista[contador-1]).replace(' ',"")),1)
                              elif(reportado!=None):
                                 reportado.cantidadMensajes = reportado.cantidadMensajes + 1
                          ########################################################################

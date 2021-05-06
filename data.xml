@@ -1,19 +1,36 @@
 <ESTADISTICAS>
 	<ESTADISTICA>
 	    <FECHA> 01/01/2021 </FECHA>
-	    <CANTIDAD_MENSAJES> 1 </CANTIDAD_MENSAJES>
+	    <CANTIDAD_MENSAJES> 5 </CANTIDAD_MENSAJES>
 	<REPORTADO_POR>
 	    <EMAIL> correo1@ing.usac.edu.gt </EMAIL>
+	    <CANTIDAD_MENSAJES> 2 <CANTIDAD_MENSAJES>
+	    <EMAIL> correo5@ing.usac.edu.gt </EMAIL>
+	    <CANTIDAD_MENSAJES> 1 <CANTIDAD_MENSAJES>
+	    <EMAIL> correo9@ing.usac.edu.gt </EMAIL>
+	    <CANTIDAD_MENSAJES> 1 <CANTIDAD_MENSAJES>
+	    <EMAIL> correo10@ing.usac.edu.gt </EMAIL>
 	    <CANTIDAD_MENSAJES> 1 <CANTIDAD_MENSAJES>
 	</REPORTADO_POR>
 	<AFECTADOS>
 	    <AFECTADOS> afectado11@ing.usac.edu.gt</AFECTADOS>
 	    <AFECTADOS> afectado12@ing.usac.edu.gt</AFECTADOS>
+	    <AFECTADOS> afectado51@ing.usac.edu.gt</AFECTADOS>
+	    <AFECTADOS> afectado91@ing.usac.edu.gt</AFECTADOS>
+	    <AFECTADOS> afectado102@ing.usac.edu.gt</AFECTADOS>
+	    <AFECTADOS> afectado103@ing.usac.edu.gt</AFECTADOS>
+	    <AFECTADOS> afectado122@ing.usac.edu.gt</AFECTADOS>
+	    <AFECTADOS> afectado123@ing.usac.edu.gt</AFECTADOS>
 	</AFECTADOS>
 	<ERRORES>
 	    <ERROR> 20001</ERROR>
 	    <CANTIDAD_MENSAJES> 1 <CANTIDAD_MENSAJES>
-	    </ERRORES> 
+	    <ERROR> 12345</ERROR>
+	    <CANTIDAD_MENSAJES> 1 <CANTIDAD_MENSAJES>
+	    <ERROR> 30124</ERROR>
+	    <CANTIDAD_MENSAJES> 1 <CANTIDAD_MENSAJES>
+	    <ERROR> 88899</ERROR>
+	    <CANTIDAD_MENSAJES> 2 <CANTIDAD_MENSAJES>
 	</ERRORES>
 	<ESTADISTICA>
 	    <FECHA> 05/01/2021 </FECHA>
@@ -30,41 +47,89 @@
 	<ERRORES>
 	    <ERROR> 25684</ERROR>
 	    <CANTIDAD_MENSAJES> 1 <CANTIDAD_MENSAJES>
-	    </ERRORES> 
 	</ERRORES>
 	<ESTADISTICA>
-	    <FECHA> 20/04/2021 </FECHA>
+	    <FECHA> 10/01/2021 </FECHA>
 	    <CANTIDAD_MENSAJES> 1 </CANTIDAD_MENSAJES>
 	<REPORTADO_POR>
-	    <EMAIL> bart@ing.usac.edu.gt, </EMAIL>
+	    <EMAIL> correo3@ing.usac.edu.gt </EMAIL>
 	    <CANTIDAD_MENSAJES> 1 <CANTIDAD_MENSAJES>
 	</REPORTADO_POR>
 	<AFECTADOS>
-	    <AFECTADOS> bart@ing.usac.edu.gt</AFECTADOS>
-	    <AFECTADOS> lisa@ing.usac.edu.gt</AFECTADOS>
+	    <AFECTADOS> afectado31@ing.usac.edu.gt</AFECTADOS>
+	    <AFECTADOS> afectado32@ing.usac.edu.gt</AFECTADOS>
+	    <AFECTADOS> afectado33@ing.usac.edu.gt</AFECTADOS>
 	</AFECTADOS>
 	<ERRORES>
-	    <ERROR> 20002</ERROR>
+	    <ERROR> 75864</ERROR>
 	    <CANTIDAD_MENSAJES> 1 <CANTIDAD_MENSAJES>
-	    </ERRORES> 
 	</ERRORES>
 	<ESTADISTICA>
-	    <FECHA> 25/04/2021 </FECHA>
-	    <CANTIDAD_MENSAJES> 1 </CANTIDAD_MENSAJES>
+	    <FECHA> 15/01/2021 </FECHA>
+	    <CANTIDAD_MENSAJES> 3 </CANTIDAD_MENSAJES>
 	<REPORTADO_POR>
-	    <EMAIL> homero@ing.usac.edu.gt, </EMAIL>
+	    <EMAIL> correo4@ing.usac.edu.gt </EMAIL>
+	    <CANTIDAD_MENSAJES> 1 <CANTIDAD_MENSAJES>
+	    <EMAIL> correo8@ing.usac.edu.gt </EMAIL>
+	    <CANTIDAD_MENSAJES> 1 <CANTIDAD_MENSAJES>
+	    <EMAIL> correo11@ing.usac.edu.gt </EMAIL>
 	    <CANTIDAD_MENSAJES> 1 <CANTIDAD_MENSAJES>
 	</REPORTADO_POR>
 	<AFECTADOS>
-	    <AFECTADOS> homero@ing.usac.edu.gt</AFECTADOS>
-	    <AFECTADOS> lisa@ing.usac.edu.gt</AFECTADOS>
-	    <AFECTADOS> </AFECTADOS>
-	    <AFECTADOS> moe@ing.usac.edu.gt</AFECTADOS>
-	    <AFECTADOS> bart@ing.usac.edu.gt</AFECTADOS>
+	    <AFECTADOS> afectado41@ing.usac.edu.gt</AFECTADOS>
+	    <AFECTADOS> afectado42@ing.usac.edu.gt</AFECTADOS>
+	    <AFECTADOS> afectado43@ing.usac.edu.gt</AFECTADOS>
+	    <AFECTADOS> afectado44@ing.usac.edu.gt</AFECTADOS>
+	    <AFECTADOS> afectado81@ing.usac.edu.gt</AFECTADOS>
+	    <AFECTADOS> afectado111@ing.usac.edu.gt</AFECTADOS>
+	    <AFECTADOS> afectado112@ing.usac.edu.gt</AFECTADOS>
+	    <AFECTADOS> afectado113@ing.usac.edu.gt</AFECTADOS>
 	</AFECTADOS>
 	<ERRORES>
-	    <ERROR> 20003</ERROR>
+	    <ERROR> 75553</ERROR>
 	    <CANTIDAD_MENSAJES> 1 <CANTIDAD_MENSAJES>
-	    </ERRORES> 
+	    <ERROR> 778899</ERROR>
+	    <CANTIDAD_MENSAJES> 1 <CANTIDAD_MENSAJES>
+	    <ERROR> 12111</ERROR>
+	    <CANTIDAD_MENSAJES> 1 <CANTIDAD_MENSAJES>
+	</ERRORES>
+	<ESTADISTICA>
+	    <FECHA> 20/01/2021 </FECHA>
+	    <CANTIDAD_MENSAJES> 1 </CANTIDAD_MENSAJES>
+	<REPORTADO_POR>
+	    <EMAIL> correo6@ing.usac.edu.gt </EMAIL>
+	    <CANTIDAD_MENSAJES> 1 <CANTIDAD_MENSAJES>
+	</REPORTADO_POR>
+	<AFECTADOS>
+	    <AFECTADOS> afectado61@ing.usac.edu.gt</AFECTADOS>
+	    <AFECTADOS> afectado62@ing.usac.edu.gt</AFECTADOS>
+	    <AFECTADOS> afectado63@ing.usac.edu.gt</AFECTADOS>
+	    <AFECTADOS> afectado64@ing.usac.edu.gt</AFECTADOS>
+	    <AFECTADOS> afectado65@ing.usac.edu.gt</AFECTADOS>
+	</AFECTADOS>
+	<ERRORES>
+	    <ERROR> 20001</ERROR>
+	    <CANTIDAD_MENSAJES> 1 <CANTIDAD_MENSAJES>
+	</ERRORES>
+	<ESTADISTICA>
+	    <FECHA> 25/01/2021 </FECHA>
+	    <CANTIDAD_MENSAJES> 2 </CANTIDAD_MENSAJES>
+	<REPORTADO_POR>
+	    <EMAIL> correo7@ing.usac.edu.gt </EMAIL>
+	    <CANTIDAD_MENSAJES> 2 <CANTIDAD_MENSAJES>
+	</REPORTADO_POR>
+	<AFECTADOS>
+	    <AFECTADOS> afectado71@ing.usac.edu.gt</AFECTADOS>
+	    <AFECTADOS> afectado72@ing.usac.edu.gt</AFECTADOS>
+	    <AFECTADOS> afectado73@ing.usac.edu.gt</AFECTADOS>
+	    <AFECTADOS> afectado74@ing.usac.edu.gt</AFECTADOS>
+	    <AFECTADOS> afectado75@ing.usac.edu.gt</AFECTADOS>
+	    <AFECTADOS> afectado131@ing.usac.edu.gt</AFECTADOS>
+	    <AFECTADOS> afectado132@ing.usac.edu.gt</AFECTADOS>
+	    <AFECTADOS> afectado134@ing.usac.edu.gt</AFECTADOS>
+	</AFECTADOS>
+	<ERRORES>
+	    <ERROR> 20001</ERROR>
+	    <CANTIDAD_MENSAJES> 2 <CANTIDAD_MENSAJES>
 	</ERRORES>
 </ESTADISTICAS>
