@@ -37,7 +37,13 @@ def registro(request):
 
 def ayuda(request):
     context = {
-        'title':'ayuda'
+        'datos':'Jose Manuel Lara Elias - 201344708'
+    }
+    return render(request, 'ayuda.html', context)
+
+def ayuda1(request):
+    context = {
+        'title':'hola'
     }
     return render(request, 'ayuda.html', context)
 

@@ -1,13 +1,33 @@
 {% extends "base.html" %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
-</html>
+{% block content %}
+
+<style>
+    form{
+    color : grey;
+    position: relative;
+  
+
+  }
+  </style>
+<br>
+<FONT COLOR="red"><h2>Informacion Del Estudiante</h2></FONT>
+<form method="post" action="/ayuda/" enctype="multipart/form-data">
+{% csrf_token %}
+<button type="submit">Datos Del Estudiante</button>
+</form>
+{% if datos %}
+<FONT COLOR="red"></FONTCOLOR><h1>{{datos}}</h1></FONT>
+{% endif %}
+<form id= "form1"
+            name=  "form1"
+            method="post"
+            href="/Proyecto3.pdf">
+         <label> 
+             <input type="submit"
+                    name="Submit"
+                    value="Abrir Documentacion" />
+         </label>
+      </form>
+
+
+{% endblock %}
