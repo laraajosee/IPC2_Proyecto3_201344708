@@ -11,7 +11,7 @@
 </head>
 <style>
   form{
-  color : rebeccapurple;
+  color :aqua;
   position: relative;
 
   width  : 700px;
@@ -25,14 +25,9 @@
   width: 1800px;
   height: 1700;
   margin: 10px;
-  border: 3px solid #73AD21;
+  background-color:black;
 }
-     body {
-    margin: 0;
-    padding: 0;
-    background-image: url("fondo1.gif") ;
-    background-size: cover;
-}
+
  
   </style>
 <div class="div1">
@@ -72,6 +67,7 @@
     var lista=[];
     var lista2=[]
     var lista3=[]
+    var lista4=[]
 </script>
 {% for k in grafica%}
 <script type="text/javascript"> 
@@ -81,6 +77,16 @@
 {% for p in pastel%}
 <script type="text/javascript"> 
   lista2.push('{{p}}')    
+</script>
+{% endfor %}
+{% for m in grafica2%}
+<script type="text/javascript"> 
+  lista3.push('{{m}}')    
+</script>
+{% endfor %}
+{% for s in pastel2%}
+<script type="text/javascript"> 
+  lista4.push('{{s}}')    
 </script>
 {% endfor %}
 
@@ -112,13 +118,13 @@
          datasets: [{
            label: "Population (millions)",
            backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
-           data: [2478,5267,734,784,433]
+           data: lista4
          }]
        },
        options: {
          title: {
            display: true,
-           text: 'Predicted world population (millions) in 2050'
+           text: 'presentar gráficamente el total de mensajes que contienen el codigo seleccionado'
          }
        }
    });

@@ -1,19 +1,20 @@
 {% extends "base.html" %}
 {% block content %}
+
 <style>
-    body {
-   margin: 0;
-   padding: 0;
-   background-image: url("fondo1.gif") ;
-   background-size: cover;
-}
-</style>
+    form{
+    color : grey;
+    position: relative;
+  
+
+  }
+  </style>
 <br>
-<h2>Subir Un Archivo</h2>
+<FONT COLOR="red"><h2>Subir Un Archivo</h2></FONT>
 <form method="post" action="/upload/" enctype="multipart/form-data">
 {% csrf_token %}
 <input type="file" name="document">
-<button type="submit">Presiona/button>
+<button type="submit">Presiona</button>
 </form>
 
 {% endblock %}

@@ -263,4 +263,13 @@ class Gestor:
     def errorCombo(self):
         usuarioCombo = self.ListaFecha.errorCombo()
         return usuarioCombo
+    
+    def error(self, error):
+        listaError = self.ListaFecha.error(error)
+        return listaError 
+    
+    def cantidadError(self, error):
+        listaErrorCantidad = self.ListaFecha.cantidadError(error)
+        return listaErrorCantidad
+
 

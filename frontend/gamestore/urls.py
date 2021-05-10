@@ -13,5 +13,6 @@ urlpatterns = [
     path('graficar/', views.graficar, name='graficar'),
     path('cargarGraficar/', views.cargarGrafica, name='cargarGrafica'),
     path('graficar2/', views.graficar2, name='graficar2'),
+    path('ayuda/', views.ayuda, name='ayuda'),
     
 ]

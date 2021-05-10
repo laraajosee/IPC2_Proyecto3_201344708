@@ -35,6 +35,34 @@ class ListaError:
             print('Error:',tmp.error+ ' Cantidad de mensajes: '+ str(tmp.cantidadMensajes))
 
             tmp = tmp.siguiente
+    
+    def cantidadError(self,error):
+        tmp = self.inicio
+        print("entro en cantidad error:" +error)
+        while tmp is not None:
+            print('comparanto '+tmp.error+"con " +error)
+            if(tmp.error == error):
+                print("entro al if")
+                errorRegreso = tmp.cantidadMensajes
+                return errorRegreso 
+
+
+            tmp = tmp.siguiente
+
+
+
+    
+    def error(self,error):
+        tmp = self.inicio
+        verificar = False
+        
+        while tmp is not None:
+            if(tmp.error == error):
+                verificar = True
+
+            tmp = tmp.siguiente
+        return verificar
+
 
     def errorCombo(self):
         tmp = self.inicio

@@ -48,6 +48,17 @@ def fecha():
     print(lista)
     return jsonify({'data':lista})
 
+@app.route('/error',methods=["POST"])
+def error():
+    print('Entrando a error')
+    r = request.get_json()
+    print(r['data'])
+    lista = gestor.error(r['data'])
+    lista2 = gestor.cantidadError(r['data'])
+    print('listaaaaaaa')
+    print(lista2)
+    return jsonify(data=lista,data2= lista2)
+
 @app.route('/cantidad',methods=["POST"])
 def cantidad():
     r = request.get_json()

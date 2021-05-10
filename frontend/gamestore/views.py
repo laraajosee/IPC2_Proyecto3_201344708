@@ -35,6 +35,12 @@ def registro(request):
     }
     return render(request, 'signup.html', context)
 
+def ayuda(request):
+    context = {
+        'title':'ayuda'
+    }
+    return render(request, 'ayuda.html', context)
+
 
 def RecibirTexto(request):
     contexto ={}
@@ -106,8 +112,14 @@ def graficar2(request):
             result = request.GET['comboBox2']
             response = requests.get(endpoint+'comboBox')
             data = response.json()
-            print(result)
+            pload = {'data':result}
+            r = requests.post(endpoint+'/error',json=pload);
+            k = r.json()
+            print(k['data'])
+            print(k['data2'])
             contexto={
+                'pastel2': k['data2'],
+                'grafica2': k['data'],
                 'games' : data['hola'],
                 'listaErrores': data['adios']
             }
@@ -125,7 +137,6 @@ def cargarGrafica(request):
 
 
 
-   
 def upload(request):
     contexto ={}
     if request.method == 'POST':

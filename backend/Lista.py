@@ -102,7 +102,35 @@ class Lista:
             tmp = tmp.siguiente
         
         return lista
+    
+    def cantidadError(self,error):
+        tmp = self.inicio
+        lista = []
+    
+        
+        while tmp is not None:
+           
+            verificador = tmp.error.cantidadError(error)
+            if(verificador != None):
+                lista.append(verificador)
 
+            tmp = tmp.siguiente
+        return lista
+
+    def error(self, error):
+        tmp = self.inicio
+        lista = []
+        
+        
+        while tmp is not None:
+           
+            verificador = tmp.error.error(error)
+            if(verificador == True):
+                lista.append(tmp.fecha)
+
+
+            tmp = tmp.siguiente
+        return lista
   
 
     def estadistica(self):
