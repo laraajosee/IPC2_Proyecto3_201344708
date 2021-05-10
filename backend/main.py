@@ -96,7 +96,9 @@ def post_events():
                     mimetype='text/plain',
                     content_type='text/plain')
 
-
+@app.route('/reiniciar',methods=['POST'])
+def reiniciar():
+    app.run(debug=True)
 #Iniciar el servidor
 if __name__ == "__main__":
     app.run(debug=True)

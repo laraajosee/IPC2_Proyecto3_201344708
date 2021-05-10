@@ -33,7 +33,7 @@
             </div>          
           </form>
           {% else %}
-          <form action="/graficar2/" method="POST" style="float: left">
+          <form action="/signup/" method="POST" style="float: left">
             {% csrf_token %}
             <div class="offset-md-2">
                 <label for="name" class="form-label">Entrada:</label>
@@ -44,7 +44,7 @@
           </form>
           {% endif %}
           {% if texto %}
-          <form action="/recibirTexto/" method="GET" style="float: left">
+          <form action="/reset/" method="GET" style="float: left">
             {% csrf_token %}
             <div class="offset-md-2">
                 <label for="regreso" class="form-label">Salida:</label>
@@ -54,7 +54,7 @@
             </div>
           </form>
           {% else %}
-          <form action="/recibirTexto/" method="GET" style="float: left">
+          <form action="/reset/" method="GET" style="float: left">
             {% csrf_token %}
             <div class="offset-md-2">
                 <label for="regreso" class="form-label">Salida:</label>

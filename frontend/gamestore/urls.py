@@ -14,6 +14,7 @@ urlpatterns = [
     path('cargarGraficar/', views.cargarGrafica, name='cargarGrafica'),
     path('graficar2/', views.graficar2, name='graficar2'),
     path('ayuda/', views.ayuda, name='ayuda'),
-    path('ayuda1/', views.ayuda1, name='ayuda1')
+    path('ayuda1/', views.ayuda1, name='ayuda1'),
+    path('reset/', views.reset, name='reset'),
     
 ]

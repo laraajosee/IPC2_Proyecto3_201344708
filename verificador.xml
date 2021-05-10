@@ -1,9 +1,8 @@
 
-<EVENTO>
-Guatemala, 25/01/2021
-Reportado por: ”Nombre Empleado 7” correo7@ing.usac.edu.gt
-Usuarios afectados: afectado131@ing.usac.edu.gt, afectado132@ing.usac.edu.gt, afectado134@ing.usac.edu.gt
-Error: 20001 - Mensaje de el error 20001 
-este es la segunda linea de el error numero 20001 
-este es la terceralinea de el error numero 20001 
-</EVENTO>
+	<EVENTO>
+		Guatemala, 25/04/2021
+		Reportado por: nelson@ing.usac.edu.gt
+		Usuarios afectados: moe@ing.usac.edu.gt, bart@ing.usac.edu.gt
+		Error: 20004 - Peticion no reconocida por el servidor,
+		not found error.
+	</EVENTO>

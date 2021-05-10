@@ -18,16 +18,7 @@
 {% if datos %}
 <FONT COLOR="red"></FONTCOLOR><h1>{{datos}}</h1></FONT>
 {% endif %}
-<form id= "form1"
-            name=  "form1"
-            method="post"
-            href="/Proyecto3.pdf">
-         <label> 
-             <input type="submit"
-                    name="Submit"
-                    value="Abrir Documentacion" />
-         </label>
-      </form>
+      <embed src="/Proyecto3.pdf" width="500" height="375">.
 
 
 {% endblock %}

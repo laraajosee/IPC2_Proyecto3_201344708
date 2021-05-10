@@ -41,6 +41,12 @@ def ayuda(request):
     }
     return render(request, 'ayuda.html', context)
 
+def reset(request):
+    context = {
+        'datos':'datos'
+    }
+    return render(request, 'signup.html', context)
+
 def ayuda1(request):
     context = {
         'title':'hola'
@@ -67,7 +73,6 @@ def signup(request):
     if request.method == 'POST':
         form = RegisterForm(request.POST)
         if form.is_valid():
-            form2 = RetornoForm(request.GET)
             response = requests.get(endpoint+'/stats');
             name = form.data['name']
             pload = {'nombre':name}
