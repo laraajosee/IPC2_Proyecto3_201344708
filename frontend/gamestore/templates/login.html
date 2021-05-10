@@ -1,17 +1,50 @@
+{% extends "base.html" %}
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <form action="/abrirXML/" method="POST"> 
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.js"></script>
+    </head>
+    <h1>sadddd</h1>
+    <form action="/signup/" method="POST" style="float: left">
         {% csrf_token %}
-        <input type="file" id="myFileee" name="myFileee">
-        <input type="submit">
-    </form>
-
-</body>
+        <div class="offset-md-2">
+            <label for="name" class="form-label">Entrada:</label>
+            <textarea class="form-control" id="name" name ="name" aria-describedby="userhelp" cols=130 rows=30>{{textoEntrada}}</textarea> 
+            <br>
+            <button type="submit" class="btn btn-success btn-lg" >Enviar</button>
+        </div>          
+      </form>
+    <body>     
+        <canvas id="myChart" width="400" height="400"></canvas>
+    </body>
+    <script>
+        var ctx= document.getElementById("myChart").getContext("2d");
+        var myChart= new Chart(ctx,{
+            type:"pie",
+            data:{
+                labels:['col1','col2','col3'],
+                datasets:[{
+                        label:'Num datos',
+                        data:[10,9,15],
+                        backgroundColor:[
+                            'rgb(66, 134, 244,0.5)',
+                            'rgb(74, 135, 72,0.5)',
+                            'rgb(229, 89, 50,0.5)'
+                        ]
+                }]
+            },
+            options:{
+                scales:{
+                    yAxes:[{
+                            ticks:{
+                                beginAtZero:true
+                            }
+                    }]
+                }
+            }
+        });
+    </script>
 </html>

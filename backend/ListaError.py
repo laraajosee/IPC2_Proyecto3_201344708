@@ -1,5 +1,6 @@
 from NodoError import NodoError
 
+lista = []
 class ListaError:
     def __init__(self):
         self.inicio = None
@@ -34,6 +35,23 @@ class ListaError:
             print('Error:',tmp.error+ ' Cantidad de mensajes: '+ str(tmp.cantidadMensajes))
 
             tmp = tmp.siguiente
+
+    def errorCombo(self):
+        tmp = self.inicio
+        verificador = False
+        
+        while tmp is not None:
+            for n in lista:
+                if(tmp.error == n):
+                 verificador = True
+                
+            if( verificador== False):
+                 lista.append(tmp.error)
+                
+           
+            tmp = tmp.siguiente
+
+        return lista
 
     def devolverString(self):
         tmp = self.inicio

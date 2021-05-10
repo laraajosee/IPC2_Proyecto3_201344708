@@ -46,3 +46,29 @@ class ListaUsuario:
             print('Correo:',tmp.usuario+ ' Cantidad de mensajes: '+ str(tmp.cantidadMensajes))
 
             tmp = tmp.siguiente
+    
+    def fecha(self):
+        tmp = self.inicio
+        usuario=[]
+        
+        while tmp is not None:
+            
+            usuario.append(tmp.usuario)
+           
+
+            tmp = tmp.siguiente
+    
+        return usuario
+
+    def cantidad(self):
+        tmp = self.inicio
+        cantidad=[]
+        
+        while tmp is not None:
+            
+            cantidad.append(tmp.cantidadMensajes)
+           
+
+            tmp = tmp.siguiente
+    
+        return cantidad

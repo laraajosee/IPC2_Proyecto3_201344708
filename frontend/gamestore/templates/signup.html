@@ -8,54 +8,63 @@
   
   <title>Document</title>
 </head>
-<style> 
-  .div1 {
-    width: 2500;
-    height: 3000px;
-    background:"fondo.png"
-    
+<style>
+  textarea{
+  background-color: aqua;
+  color:lightblue;
   }
-  body {
-    margin: 0;
-    padding: 0;
-    background-color: yellow;
-    background-size: cover;
-}
-</style>
-
+  label {
+    color: white;
+    padding: 8px;
+  }
+  </style>
+ 
+   
 <div class="div1">
-  <body background="fondo.png"> </body>
-        {% if entradaTexto %}
+  
+        {% if textoEntrada %}
         <form action="/signup/" method="POST" style="float: left">
             {% csrf_token %}
             <div class="offset-md-2">
                 <label for="name" class="form-label">Entrada:</label>
-                <textarea class="form-control" id="name" name ="name" aria-describedby="userhelp" cols=130 rows=30>{{textoEntrada}}</textarea> 
-                <button type="submit" class="btn btn-dark btn-lg">Registrarse</button>
+                <textarea class="form-control" id="name" name ="name" aria-describedby="userhelp" cols=130 rows=30 font-family="Arial, Sans-serif">{{textoEntrada}}</textarea> 
+                <br>
+                <button type="submit" class="btn btn-dark btn-lg">Enviar</button>
             </div>          
           </form>
           {% else %}
-          <form action="/signup/" method="POST" style="float: left">
+          <form action="/graficar2/" method="POST" style="float: left">
             {% csrf_token %}
             <div class="offset-md-2">
                 <label for="name" class="form-label">Entrada:</label>
                 <textarea class="form-control" id="name" name ="name" aria-describedby="userhelp" cols=130 rows=30>{{textoEntrada}}</textarea> 
+                <br>
                 <button type="submit" class="btn btn-success btn-lg" >Enviar</button>
             </div>          
           </form>
           {% endif %}
-
+          {% if texto %}
           <form action="/recibirTexto/" method="GET" style="float: left">
             {% csrf_token %}
             <div class="offset-md-2">
                 <label for="regreso" class="form-label">Salida:</label>
                 <textarea class="form-control" id="regreso" name ="regreso" aria-describedby="userhelp" cols=130 rows=30>{{texto}}</textarea> 
-              <button type="submit" class="btn btn-danger btn-lg">Iniciar Sesi&oacute;n</button>
+                <br>
+              <button type="submit" class="btn btn-danger btn-lg">Reset</button>
             </div>
-            
+          </form>
+          {% else %}
+          <form action="/recibirTexto/" method="GET" style="float: left">
+            {% csrf_token %}
+            <div class="offset-md-2">
+                <label for="regreso" class="form-label">Salida:</label>
+                <textarea class="form-control" id="regreso" name ="regreso" aria-describedby="userhelp" cols=130 rows=30>{{texto}}</textarea> 
+                <br>
+              <button type="submit" class="btn btn-danger btn-lg">Reset</button>
+            </div>
           </form>
         </div>
-
+        {% endif %}
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
  
 {% endblock content %}

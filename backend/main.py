@@ -1,4 +1,4 @@
-from flask import Flask,Response, request, jsonify
+from flask import Flask,Response, json, request, jsonify
 from flask_cors import CORS
 
 from gestor import Gestor
@@ -16,20 +16,7 @@ gestor = Gestor()
 def home():
     return "SERVER funciona correctamente."
 
-#Obtener juegos
-@app.route('/games')
-def getGames():
-    return gestor.obtener_games() 
 
-
-@app.route('/login/<user>/<password>')
-def login(user=None,password=None):
-    res = gestor.obtener_usuario(user,password)
-    if res ==None:
-        return '{"data":false}'
-    return '{"data":true}'
-
-#Registro de usuarios
 @app.route('/registro',methods=['POST'])
 def registrar_usuario():
     dato=request.json
@@ -41,6 +28,33 @@ def get_events():
     data = open('data.xml', 'r+', encoding='utf-8')
 
     return Response(response=data.read())
+
+@app.route('/comboBox')
+def comboBox():
+    combo = gestor.listaCombo()
+    comboError = gestor.errorCombo()
+    print("lista")
+    print(comboError)
+    
+    return jsonify(hola=combo, adios=comboError)
+
+@app.route('/fecha',methods=["POST"])
+def fecha():
+    print('Entrando a fecha')
+    r = request.get_json()
+    print(r['data'])
+    lista = gestor.fecha(r['data'])
+    print('lista')
+    print(lista)
+    return jsonify({'data':lista})
+
+@app.route('/cantidad',methods=["POST"])
+def cantidad():
+    r = request.get_json()
+    lista = gestor.usuario(r['data'])
+    print('lista')
+    print(lista)
+    return jsonify({'data':lista})
 
 
 @app.route('/rutaArchivo', methods=["POST"])

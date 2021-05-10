@@ -1,8 +1,9 @@
 from typing import Container
 from Nodo import Nodo
 #from ListaContador import ListaContador
-
+lista =[]
 ListaFechas = []
+listaErrores= []
 #ListaVerificar = ListaContador()
 class Lista:
     def __init__(self):
@@ -53,6 +54,55 @@ class Lista:
 
             tmp = tmp.siguiente
     
+    def comboFecha(self):
+        tmp = self.inicio
+        comboFecha = []
+    
+        
+        while tmp is not None:
+            
+            comboFecha.append(tmp.fecha)
+            
+
+            tmp = tmp.siguiente
+ 
+        return comboFecha
+
+    def fecha(self,fechaa):
+        tmp = self.inicio
+        lista = []
+        
+        
+        while tmp is not None:
+           
+            if(tmp.fecha == fechaa):
+               lista = tmp.usuario.fecha()
+
+            tmp = tmp.siguiente
+        return lista
+
+    def usuario(self,cantidad):
+        tmp = self.inicio
+        lista = []
+        while tmp is not None:
+           
+            if(tmp.fecha == cantidad):
+               lista = tmp.usuario.cantidad()
+
+            tmp = tmp.siguiente
+        return lista
+
+    def errorCombo(self):
+        tmp = self.inicio
+        lista = []
+        while tmp is not None:
+            lista = tmp.error.errorCombo()
+            print(lista)
+
+            tmp = tmp.siguiente
+        
+        return lista
+
   
 
     def estadistica(self):

@@ -248,3 +248,19 @@ class Gestor:
         data.write(Estadistica)
         data.close()
 
+    def listaCombo(self):
+        listaCombo = self.ListaFecha.comboFecha()
+        return listaCombo
+
+    def fecha(self, fecha):
+        lista = self.ListaFecha.fecha(fecha)
+        return lista
+    
+    def usuario(self, cantidad):
+        lista = self.ListaFecha.usuario(cantidad)
+        return lista
+
+    def errorCombo(self):
+        usuarioCombo = self.ListaFecha.errorCombo()
+        return usuarioCombo
+

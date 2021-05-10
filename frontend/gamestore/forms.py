@@ -13,5 +13,14 @@ class RegisterForm(forms.Form):
 class RetornoForm(forms.Form):
     regreso = forms.CharField(label="regreso")
 
+class GraficarForm(forms.Form):
+    comboBox = forms.CharField(label="comboBox")
+
+class GraficarForm2(forms.Form):
+    comboBox2 = forms.CharField(label="comboBox2")
+   
+
+    
 class LeerForm(forms.Form):
     myFile = forms.CharField(label="myFile")
+
